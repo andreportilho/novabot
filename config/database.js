@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 //mongoose.connect('mongodb://localhost/novabot');
-mongoose.connect(process.ENV.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI);
 
 mongoose.connection.on('connected', function(){
 	console.log('Conectando ao mongodb');
