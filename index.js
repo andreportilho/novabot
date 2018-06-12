@@ -11,7 +11,7 @@ const app = express();
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true })); 
 
-const server = app.listen(3000, () => { console.log('Express server listening on port %d in %s mode', server.address().port,   app.settings.env);});
+const server = app.listen(process.ENV.port, () => { console.log('Express server listening on port %d in %s mode', server.address().port,   app.settings.env);});
 
 app.post('/', (req, res) => { 
   const token = "xoxp-381103429639-379509751345-381317432055-e160e892c4c9c846ce89e665bfdf51a5";
