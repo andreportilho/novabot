@@ -22,8 +22,8 @@ app.post('/', (req, res) => {
   	const response = JSON.parse(body);
   	const newQuote = quote({
   		quote: text,
-  		autor: body.profile.display_name,
-  		perfil_imagem: body.profile.image_32
+  		autor: response.profile.display_name,
+  		perfil_imagem: response.profile.image_32
   	})
   	newQuote.save(function(err){
   		if (err) throw err
