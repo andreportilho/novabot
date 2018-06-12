@@ -8,7 +8,7 @@ const schema = mongoose.Schema({
 	autor: {
 		type: String,
 		required: true
-	}
+	},
 	perfil_imagem: {
 		type: String,
 		required: true
