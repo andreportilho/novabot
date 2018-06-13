@@ -15,7 +15,6 @@ const server = app.listen(process.env.PORT, () => { console.log('Express server 
 
 app.post('/', (req, res) => { 
   const token = process.env.TOKEN;
-  console.log("TOKEN teste", token);
   const user = req.body.user_id;
   const text = req.body.text;
 
