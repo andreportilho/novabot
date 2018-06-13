@@ -32,12 +32,12 @@ app.post('/', (req, res) => {
   	const newQuote = quote({
   		quote: text,
   		autor: response.profile.display_name,
-  		perfil_imagem: response.profile.image_64
+  		perfil_imagem: response.profile.image_192
   	})
   	newQuote.save(function(err){
   		if (err) throw err
 
-  		console.log("Registro efetuado com sucesso!");
+  		console.log("Mensagem enviada com sucesso!");
    	});
   });
 
