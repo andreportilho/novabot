@@ -14,16 +14,17 @@ body {
 	border-radius: 15px;
 	-moz-border-radius: 15px;
 	-webkit-border-radius: 15px;
-	background-color:#CDCDCD;
+	background-color:#769fe2;
 	margin:0px auto;
-	border-left:10px solid #CDCDCD;
-	border-right:2px solid #CDCDCD;
+	border-left:10px solid #769fe2;
+	border-right:2px solid #769fe2;
+	border-top: 5px solid #769fe2;
 }
 
 .quote {
 	text-align: center;
-	border-top: 0px solid #CDCDCD;
-	border-bottom: 10px solid #CDCDCD;
+	border-top: 0px solid #769fe2;
+	border-bottom: 10px solid #769fe2;
 }
 
 .imagem {

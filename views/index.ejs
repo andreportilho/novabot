@@ -8,7 +8,9 @@
 		<form action="/" method="get">
 			<%for (var result in results){%>
 				<div class="roundContainer">
-					<div class="imagem"><img src=<%=results[result].perfil_imagem%>></div>
+					<div class="imagem">
+						<img src="<%=results[result].perfil_imagem%>" width="30%" height="30%" style="border-radius: 50%">
+					</div>
 					<div class="autor"> @<%=results[result].autor%></div>
 					<div>&nbsp;</div>
 					<div>&nbsp;</div>
