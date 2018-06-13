@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
-console.log(process.env.PRODUCTION);
-if (process.env.PRODUCTION === 1) {
+if (process.env.PRODUCTION) {
 	mongoose.connect(process.env.MONGODB_URI);
 	console.log("Ambiente de produção");
 } else {
