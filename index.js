@@ -5,11 +5,13 @@ const bodyParser = require('body-parser');
 const request = require('request');
 require('./config/database');
 const quote = require('./app/models/quotes');
+const path = require('path');
 
 
 const app = express(); 
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, '/public')));
 app.set('view engine', 'ejs'); 
 
 if (process.env.PRODUCTION) {
