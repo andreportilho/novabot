@@ -3,10 +3,11 @@ const mongoose = require('mongoose');
 console.log(process.env.PRODUCTION);
 if (process.env.PRODUCTION === 1) {
 	mongoose.connect(process.env.MONGODB_URI);
+	console.log("Ambiente de produção");
 } else {
 	mongoose.connect('mongodb://localhost/novabot');
+	console.log("Ambiente de desenvolvimento");
 }
-
 
 mongoose.connection.on('connected', function(){
 	console.log('Conectando ao mongodb');
