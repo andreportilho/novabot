@@ -25,3 +25,7 @@ body {
 	border-top: 0px solid #CDCDCD;
 	border-bottom: 10px solid #CDCDCD;
 }
+
+.imagem {
+	border-radius: 50%;
+}

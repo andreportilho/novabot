@@ -20,7 +20,6 @@ if (process.env.PRODUCTION) {
 	const server = app.listen(3000, () => { console.log('Express server escutando na porta %d', server.address().port);});
 }
 
-
 app.post('/', (req, res) => { 
   const token = process.env.TOKEN;
   const user = req.body.user_id;
@@ -28,11 +27,10 @@ app.post('/', (req, res) => {
 
   request.post({url:'https://slack.com/api/users.profile.get', form: {token, user}}, function(err, httpResponse, body) {
   	const response = JSON.parse(body);
-  	console.log(response);
   	const newQuote = quote({
   		quote: text,
   		autor: response.profile.display_name,
-  		perfil_imagem: response.profile.image_192
+  		perfil_imagem: response.profile.image_72
   	})
   	newQuote.save(function(err){
   		if (err) throw err
