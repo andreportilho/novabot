@@ -9,7 +9,8 @@ const quote = require('./app/models/quotes');
 
 const app = express(); 
 app.use(bodyParser.json()); 
-app.use(bodyParser.urlencoded({ extended: true })); 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.set('view engine', 'ejs'); 
 
 if (process.env.PRODUCTION) {
 	const server = app.listen(process.env.PORT, () => { console.log('Express server escutando na porta %d', server.address().port);});
@@ -42,10 +43,8 @@ app.post('/', (req, res) => {
 });
 
 app.get('/', function(req, res) {
-    res.sendfile('index.html');
-    quote.find({}, function(err, findAll){
+    quote.find({}, function(err, results){
 		if (err) throw err;
-		
-		console.log(findAll);
+		res.render('index', {results});
 	});
 });
