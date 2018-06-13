@@ -11,7 +11,12 @@ const app = express();
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true })); 
 
-const server = app.listen(process.env.PORT, () => { console.log('Express server escutando na porta %d', server.address().port);});
+if (process.env.PRODUCTION) {
+	const server = app.listen(process.env.PORT, () => { console.log('Express server escutando na porta %d', server.address().port);});
+} else {
+	const server = app.listen(3000, () => { console.log('Express server escutando na porta %d', server.address().port);});
+}
+
 
 app.post('/', (req, res) => { 
   const token = process.env.TOKEN;
@@ -34,4 +39,13 @@ app.post('/', (req, res) => {
   });
 
   res.send('Recebido com sucesso!');   return; 
+});
+
+app.get('/', function(req, res) {
+    res.sendfile('index.html');
+    quote.find({}, function(err, findAll){
+		if (err) throw err;
+		
+		console.log(findAll);
+	});
 });
