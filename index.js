@@ -11,10 +11,11 @@ const app = express();
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true })); 
 
-const server = app.listen(process.env.PORT, () => { console.log('Express server listening on port %d in %s mode', server.address().port,   app.settings.env);});
+const server = app.listen(process.env.PORT, () => { console.log('Express server escutando na porta %d', server.address().port);});
 
 app.post('/', (req, res) => { 
   const token = process.env.TOKEN;
+  console.log("TOKEN teste", token);
   const user = req.body.user_id;
   const text = req.body.text;
 
@@ -33,8 +34,5 @@ app.post('/', (req, res) => {
    	});
   });
 
-/*  console.log(JSON.stringify(token));
-  console.log(JSON.stringify(user));
-  console.log(JSON.stringify(text));*/
   res.send('Recebido com sucesso!');   return; 
 });
