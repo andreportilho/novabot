@@ -3,34 +3,21 @@
 	<title>Novabot - Quotes</title>
 </head>
 <body>
-	<div class="container">
-		<form action="/" method="get">
-			<fieldset>
-				<table>
-					<tbody>
-						<tr>
-							
-						</tr>
-						<tr>
-							<td>
-								<ul>
-								<%for (var result in results){%>
-								  <li>
-								  	<div><%=results[result].autor%></div>
-								  	<div><%=results[result].quote%></div>
-								  	<img src=<%=results[result].perfil_imagem%>
-								  </li>    
-								 <%}%>
-								</ul>
-							</td>
-						</tr>
-						<tr>
-							
-						</tr>
-					</tbody>
-				</table>
-			</fieldset>
-		</form>
-	</div>
+	<form action="/" method="get">
+		<%for (var result in results){%>
+		  	<div class="divTable">
+			<div class="divTableBody">
+			<div class="divTableRow">
+			<div class="divTableCell"><%=results[result].quote%></div>
+			<div class="divTableCell">&nbsp;</div>
+			</div>
+			<div class="divTableRow">
+			<div class="divTableCell"><img src=<%=results[result].perfil_imagem%>
+			<div class="divTableCell"><%=results[result].autor%></div>
+			</div>
+			</div>
+			</div>
+		<%}%>
+	</form>
 </body>
 </html>

@@ -30,7 +30,7 @@ app.post('/', (req, res) => {
   	const newQuote = quote({
   		quote: text,
   		autor: response.profile.display_name,
-  		perfil_imagem: response.profile.image_32
+  		perfil_imagem: response.profile.image_64
   	})
   	newQuote.save(function(err){
   		if (err) throw err
